@@ -1,0 +1,13 @@
+<h1>Lägg till ett företag</h1>
+
+<%= form_for @category do |f|%>
+	<div class="text_field">
+		<p>
+		<%= f.label :categoryName %>
+		<%=f.text_field :categoryName%>
+		</p>
+		<p>
+		<%= f.submit "Lägg till en kategori"%>
+		</p>
+	</div>
+<%end%>

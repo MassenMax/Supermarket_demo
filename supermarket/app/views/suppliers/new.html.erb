@@ -1,0 +1,28 @@
+<h1>Lägg till ett företag</h1>
+
+<%= form_for @supplier do |f|%>
+	<div class="text_field">
+		<p>
+		<%= f.label :name %>
+		<%=f.text_field :name%>
+		</p>
+		<p>
+		<%= f.label :city %>
+		<%=f.text_field :city %>
+		</p>
+				<p>
+		<%= f.label :Contactperson %>
+		<%=f.text_field :Contactperson %>
+		</p>
+				<p>
+		<%= f.label :Phonenumber %>
+		<%=f.text_field :Phonenumber %>
+		</p>
+		<p>
+		<%= f.select :categories_id, options_from_collection_for_select(Category.all, :id, :categoryName) %>
+		</p>
+		<p>
+		<%= f.submit "Lägg till företag"%>
+		</p>
+	</div>
+<%end%>

@@ -1,0 +1,22 @@
+<div class="span9">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Namn</th>
+				<th>Stad</th>
+				<th>Kontaktperson</th>
+				<th>Telefon</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @supplier.name %></td>
+				<td><%= @supplier.city %></td>
+				<td><%= @supplier.Contactperson %></td>
+				<td><%= @supplier.Phonenumber %></td>
+			</tr>
+		
+		</tbody>
+	</table>
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @supplier.city %>&zoom=14&amp;size=700x400&amp;sensor=false">
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mt222bmProject</title>
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		<style type="text/css">
+			body {
+				padding-top: 60px;
+			}
+		</style>
+	</head>
+	  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Webb-Leverantör</a>
+          <div class="nav-collapse">
+
+            <ul class="nav">
+              <li class=><a href="#">hem</a></li>
+              <li><%= link_to("Företag", {:controller => "suppliers", :action => "index" }) %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+
+     <%= yield %>
+    </div> <!-- /container -->
+
+   
+  </body>
+</html>
