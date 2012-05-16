@@ -5,7 +5,7 @@ class CreateSuppliers < ActiveRecord::Migration
       t.string "city", :limit => 20
       t.string "Contactperson", :limit => 20
       t.string "Phonenumber", :limit => 20
-      t.references :categories   
+      t.references :category   
       t.timestamps
     end
   end

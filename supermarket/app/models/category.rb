@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :Supplier
+  has_many :suppliers
 end

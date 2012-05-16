@@ -9,27 +9,38 @@
 					<%= link_to("Lägg till ett företag", {:controller => "suppliers", :action => "new" }) %>
 				</li>
 				<li>
-					<%= link_to("Lägg till ett företag", {:controller => "categories", :action => "new" }) %>
+					<%= link_to("Lägg till en kategori", {:controller => "categories", :action => "new" }) %>
 				</li>
+				<li>
+					<%= link_to("Inställning för kategorier", {:controller => "categories", :action => "index" }) %>
+				</li>
+				
 			</ul>
 		</div><!--/.well -->
 	</div>
 	<div class="span9">
-	<table class="table">  
-        <thead>  
-          <tr>  
-            <th>Företagsnamn</th>  
-
-          </tr>  
-        </thead>  
-        <tbody>  
-          <tr> 
-		<% @suppliers.each do |s|%>
-          <td><%= s.name %></td>
-         <td><%= s.inspect %></td>
-	 <% end %> 
-	 
-        </tbody>  
-      </table>
-      	</div>  
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Företagsnamn</th>
+					<th>Kategori</th>
+					<th>Ändra</th>
+					<th>Ta bort</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<% @suppliers.each do |s|%> 
+					<td><%= link_to(s.name , supplier_path(s)) %></td>
+					<td><%= s.category.try(:categoryName) %></td>
+					<td><%= link_to 'Ändra', :id => s.id, :controller => :suppliers, :action => "edit" %></td>
+					<td><%= link_to 'X', s, :confirm => "Vill du radera detta företag?", :method => :delete, :class => "suppliers" %></td>
+					
+					</tr>
+					
+					<% end %>
+					
+			</tbody>
+		</table>
+	</div>
 </div>

@@ -1,0 +1,24 @@
+	<div class="span9">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Kategorinamn</th>
+					<th>Ändra</th>
+					<th>Ta bort</th>
+				</tr>
+			</thead>
+			<tbody>
+					<% @category.each do |c|%> 
+					<td><%= c.categoryName %></td>
+					<td><%= link_to 'Ändra', :id => c.id, :controller => :categories, :action => "edit" %></td>
+					<td><%= link_to 'X', c, :confirm => "Vill du radera denna kategori", :method => :delete, :class => "categories" %></td>
+					
+					</tr>
+					
+					<% end %>
+					
+					
+					
+			</tbody>
+		</table>
+	</div>
